@@ -31,11 +31,25 @@ public class GetInput {
                 .toArray();
     }
 
+    // Method to get String array
+    public static String[] getStringArray() {
+        System.out.println("Enter the strings with comma separated values");
+
+        String input = inputScanner.nextLine();
+
+        return input.split(",");
+    }
+
     // Method to get a singly linked list
     public static ListNode getSinglyLinkedList() {
         System.out.println("Enter the elements of Linked List with comma separated values");
 
         String input = inputScanner.nextLine();
+
+        if(input == null || input.trim().isEmpty()) {
+            System.out.println("Empty Linked List");
+            return null;
+        }
 
         int[] values = Arrays.stream(input.split(",")).mapToInt(Integer::parseInt).toArray();
         
