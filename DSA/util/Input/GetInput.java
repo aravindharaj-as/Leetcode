@@ -25,7 +25,12 @@ public class GetInput {
         System.out.println("Enter an array with comma seperated values");
 
         String input = inputScanner.nextLine();
-
+        
+        // For Empty array
+        if(input == null || input.trim().isEmpty()) {
+            return null;
+        }
+        
         return Arrays.stream(input.split(","))
                 .mapToInt(Integer::parseInt)
                 .toArray();
